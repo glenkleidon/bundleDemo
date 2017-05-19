@@ -9,6 +9,7 @@ type
   TExtendedButton = class(TButton)
   private
     fprop1: string;
+    fprop2: string;
     { Private declarations }
   protected
     { Protected declarations }
@@ -17,6 +18,7 @@ type
   published
     { Published declarations }
     property prop1 : string read fprop1 write fprop1;
+    property prop2 : string read fprop2 write fprop2;
   end;
 
 procedure Register;
