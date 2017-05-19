@@ -25,7 +25,8 @@ implementation
 
 procedure TForm1.ExtendedButton1Click(Sender: TObject);
 begin
-   showMessage('Property 1 is ' +  ExtendedButton1.prop1);
+   showMessage('Property 1 is '  +  ExtendedButton1.prop1 + #10#13 +
+                'Property 2 is ' + ExtendedButton1.prop2);
 end;
 
 end.

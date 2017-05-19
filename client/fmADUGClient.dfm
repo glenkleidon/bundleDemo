@@ -22,5 +22,6 @@ object Form1: TForm1
     TabOrder = 0
     OnClick = ExtendedButton1Click
     prop1 = 'Prop1'
+    prop2 = 'Prop2'
   end
 end
