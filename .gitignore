@@ -1,0 +1,8 @@
+*.local
+*.identcache
+*.~*
+__history/
+Test/**.dcu
+bin/
+Win64/
+Win32/

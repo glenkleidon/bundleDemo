@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5ED016D9-E3BA-441D-B90A-7FE0CC79B5EA}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="checkbundle.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="client\ADUGClient.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="checkbundle">
+        <MSBuild Projects="checkbundle.dproj"/>
+    </Target>
+    <Target Name="checkbundle:Clean">
+        <MSBuild Projects="checkbundle.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="checkbundle:Make">
+        <MSBuild Projects="checkbundle.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ADUGClient">
+        <MSBuild Projects="client\ADUGClient.dproj"/>
+    </Target>
+    <Target Name="ADUGClient:Clean">
+        <MSBuild Projects="client\ADUGClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ADUGClient:Make">
+        <MSBuild Projects="client\ADUGClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="checkbundle;ADUGClient"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="checkbundle:Clean;ADUGClient:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="checkbundle:Make;ADUGClient:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
